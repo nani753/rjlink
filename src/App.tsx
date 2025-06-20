@@ -1,8 +1,10 @@
+// src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import ScrollToTop from './components/ScrollToTop'; // ✅ Added
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
@@ -25,6 +27,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop /> {/* ✅ Automatically scrolls to top on route change */}
         <div className="min-h-screen relative overflow-hidden">
           <AnimatedBackground />
           <div className="relative z-10">
